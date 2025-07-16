@@ -136,7 +136,7 @@ export default function Home() {
                   View Projects <FiArrowRight className="ml-2" />
                 </a>
                 <a
-                  href="/Website/GusainAaryan_Pro_RESUME.pdf"
+                  href="/Website/GusainAaryan_Professional_Resume_FINAL.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="border border-gray-600 text-white hover:bg-gray-800 px-6 py-3 rounded-md transition-colors inline-flex items-center"
