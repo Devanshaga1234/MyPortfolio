@@ -7,13 +7,13 @@ const nextConfig = {
   },
   basePath: '/Website',
   assetPrefix: '/Website/',
-  webpack: (config) => {
-    config.module.rules.push({
-      test: /\.pdf$/,
-      type: 'asset/resource'
-    });
-    return config;
+  // Add this to help with static assets
+  experimental: {
+    images: {
+      allowFutureImage: true
+    }
   }
 }
 
+module.exports = nextConfig
 module.exports = nextConfig

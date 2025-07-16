@@ -136,7 +136,7 @@ export default function Home() {
                   View Projects <FiArrowRight className="ml-2" />
                 </a>
                 <a
-                  href="/api/resume"
+                  href="/Website/GusainAaryan_Pro_RESUME.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="border border-gray-600 text-white hover:bg-gray-800 px-6 py-3 rounded-md transition-colors inline-flex items-center"
@@ -171,7 +171,7 @@ export default function Home() {
                 className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-400/20"
               >
                 <Image 
-                  src="/images/E_Gusain_Aaryan.png" 
+                  src="/Website/images/E_Gusain_Aaryan.png" 
                   alt="Aaryan Gusain" 
                   fill 
                   className="object-cover"
