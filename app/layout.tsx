@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { ThemeProvider } from '@/components/ThemeProvider';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import '@/styles/globals.css';
@@ -9,8 +8,8 @@ import '@/styles/test.css';
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
-  title: 'Aaryan Gusain - Software Engineer & Machine Learning Enthusiast',
-  description: 'Personal portfolio of Aaryan Gusain, a software engineer specializing in full-stack development and machine learning.',
+  title: 'Aaryan Gusain - Junior CS Student at UIUC',
+  description: 'Personal portfolio of Aaryan Gusain, a CS student at UIUC specializing in full-stack development and machine learning.',
 };
 
 export default function RootLayout({
@@ -19,15 +18,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans min-h-screen flex flex-col`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Navbar />
-          <main className="flex-grow">
-            {children}
-          </main>
-          <Footer />
-        </ThemeProvider>
+    <html lang="en" className="dark scroll-smooth">
+      <body className={`${inter.variable} font-sans min-h-screen flex flex-col bg-gradient-to-br from-slate-900 via-gray-900 to-black text-white`}>
+        <Navbar />
+        <main className="flex-grow">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

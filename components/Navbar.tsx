@@ -1,11 +1,9 @@
 'use client';
 
-import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 import { FiMenu, FiX } from 'react-icons/fi';
-import { cn } from '@/lib/utils';
-import ThemeToggle from './ThemeToggle';
+import { usePathname } from 'next/navigation';
 
 const navLinks = [
 	{ href: '/', label: 'Home' },
@@ -34,72 +32,104 @@ export default function Navbar() {
 	}, [pathname]);
 
 	return (
-		<header
-			className={cn(
-				'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-				scrolled
-					? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-md py-3'
-					: 'bg-transparent py-5'
-			)}
-		>
-			<div className="container-custom flex items-center justify-between">
-				{/* Logo */}
-				<Link
-					href="/"
-					className="text-xl md:text-2xl font-bold hover:text-primary transition-colors"
-				>
-					Aaryan Gusain
-				</Link>
-
-				{/* Desktop Navigation */}
-				<nav className="hidden md:flex items-center space-x-8">
-					{navLinks.map((link) => (
-						<Link
-							key={link.href}
-							href={link.href}
-							className={cn(
-								'font-medium hover:text-primary transition-colors',
-								pathname === link.href ? 'text-primary' : ''
-							)}
-						>
-							{link.label}
-						</Link>
-					))}
-					<ThemeToggle />
-				</nav>
-
-				{/* Mobile Navigation Toggle */}
-				<div className="flex items-center md:hidden">
-					<ThemeToggle />
-					<button
-						onClick={() => setIsMenuOpen(!isMenuOpen)}
-						className="ml-4 p-1 focus:outline-none"
-						aria-label="Toggle menu"
+		<nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900/80 backdrop-blur-sm border-b border-gray-700/50">
+			<div className="container-custom">
+				<div className="flex items-center justify-between py-4">
+					<Link
+						href="/"
+						className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400"
 					>
-						{isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-					</button>
-				</div>
-			</div>
+						Aaryan Gusain
+					</Link>
 
-			{/* Mobile Menu */}
-			{isMenuOpen && (
-				<div className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-gray-900 shadow-lg py-4 animate-fade-in">
-					<nav className="container-custom flex flex-col space-y-4">
-						{navLinks.map((link) => (
-							<Link
-								key={link.href}
-								href={link.href}
-								className={cn(
-									'py-2 px-4 font-medium hover:text-primary transition-colors',
-									pathname === link.href ? 'text-primary' : ''
-								)}
-							>
-							  {link.label}
-							</Link>
-						))}
-					</nav>
+					{/* Desktop Navigation */}
+					<div className="hidden md:flex items-center space-x-8">
+						<a
+							href="#home"
+							className="text-gray-300 hover:text-white transition-colors"
+						>
+							Home
+						</a>
+						<a
+							href="#experience"
+							className="text-gray-300 hover:text-white transition-colors"
+						>
+							Experience
+						</a>
+						<a
+							href="#projects"
+							className="text-gray-300 hover:text-white transition-colors"
+						>
+							Projects
+						</a>
+						<a
+							href="#skills"
+							className="text-gray-300 hover:text-white transition-colors"
+						>
+							Skills
+						</a>
+						<a
+							href="#contact"
+							className="text-gray-300 hover:text-white transition-colors"
+						>
+							Contact
+						</a>
+					</div>
+
+					{/* Mobile menu button */}
+					<div className="md:hidden">
+						<button
+							onClick={() => setIsMenuOpen(!isMenuOpen)}
+							className="text-gray-300 hover:text-white"
+						>
+							{isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+						</button>
+					</div>
 				</div>
-			)}
-		</header>
+
+				{/* Mobile Navigation */}
+				{isMenuOpen && (
+					<div className="md:hidden py-4 border-t border-gray-700/50">
+						<div className="flex flex-col space-y-4">
+							<a
+								href="#home"
+								className="text-gray-300 hover:text-white transition-colors"
+								onClick={() => setIsMenuOpen(false)}
+							>
+								Home
+							</a>
+							<a
+								href="#experience"
+								className="text-gray-300 hover:text-white transition-colors"
+								onClick={() => setIsMenuOpen(false)}
+							>
+								Experience
+							</a>
+							<a
+								href="#projects"
+								className="text-gray-300 hover:text-white transition-colors"
+								onClick={() => setIsMenuOpen(false)}
+							>
+								Projects
+							</a>
+							<a
+								href="#skills"
+								className="text-gray-300 hover:text-white transition-colors"
+								onClick={() => setIsMenuOpen(false)}
+							>
+								Skills
+							</a>
+							<a
+								href="#contact"
+								className="text-gray-300 hover:text-white transition-colors"
+								onClick={() => setIsMenuOpen(false)}
+							>
+								Contact
+							</a>
+						</div>
+					</div>
+				)}
+			</div>
+		</nav>
 	);
 }

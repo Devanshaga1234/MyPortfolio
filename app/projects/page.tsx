@@ -19,23 +19,23 @@ export default function ProjectsPage() {
       ],
       tags: ["Python", "Machine Learning", "Audio Processing", "scikit-learn", "LightGBM"],
       icon: "🐝",
-      githubLink: "",
+      githubLink: "https://github.com/AaryanGusain/Wagglenet_Work",
       externalLink: "https://wagglenet.org/",
       externalLabel: "WaggleNet"
     },
     {
-      title: "VTuber Conversational System",
-      subtitle: "Python, Llama-3, Docker, WebSockets",
-      date: "January 2025 – Present",
+      title: "Conversational AI Avatar Platform",
+      subtitle: "Python, Llama-3 8B, DeepSpeed, Docker, WebRTC",
+      date: "January 2025 – May 2025",
       description: [
-        "Built a WebRTC-driven multimodal chat stack that brings anime characters to life using a LoRA-tuned Llama-3 8B model and a Live2D Kurisu-style React frontend.",
-        "Processed 500K Reddit/CharacterAI lines; trained with DeepSpeed ZeRO-2 on H100, cutting epoch time by 300%.",
-        "Containerized LLM, ASR and TTS micro-services with Docker Compose and WebSocket streaming for one-command deployment.",
-        "Launched public demo and iteratively tuned prompts to boost perceived naturalness by ≈30%."
+        "Fine-tuned a LoRA-adapted Llama-3 8B model on 500K Reddit/CharacterAI lines using DeepSpeed ZeRO-2 on H100s, cutting epoch time by ~3× and optimizing inference for real-time responsiveness.",
+        "Collaborated with full-stack, audio, and frontend teams to integrate the model into a production-grade WebRTC-driven Kurisu VTuber demo with Live2D animation, CosyVoice TTS, and Whisper ASR.",
+        "Contributed to Docker-based deployment by aligning model outputs with audio-visual sync targets (<120ms drift), supporting prompt iteration and debugging tools across microservices.",
+        "Helped design and analyze feedback loops to improve perceived naturalness (~30% gain), working alongside the conversational and UI teams to guide prompt engineering and user testing."
       ],
-      tags: ["Python", "LLM", "Docker", "WebSockets", "React", "ASR", "TTS"],
+      tags: ["Python", "LLM", "DeepSpeed", "Docker", "WebRTC", "Live2D", "TTS", "ASR"],
       icon: "🎭",
-      githubLink: "",
+      githubLink: "https://github.com/AaryanGusain/TextFine_Tune",
       demoLink: ""
     },
     {
@@ -48,7 +48,7 @@ export default function ProjectsPage() {
       ],
       tags: ["React", "Django", "Python", "Machine Learning", "MediaPipe", "CNN"],
       icon: "🤟",
-      githubLink: "",
+      githubLink: "https://github.com/AaryanGusain/ASL_interpreter",
       demoLink: ""
     },
     {
@@ -61,7 +61,7 @@ export default function ProjectsPage() {
       ],
       tags: ["React", "Node.js", "MySQL", "NLP", "Tailwind", "REST API"],
       icon: "💼",
-      githubLink: "",
+      githubLink: "https://github.com/AaryanGusain/Job_Genie",
       demoLink: ""
     },
     {
@@ -74,7 +74,7 @@ export default function ProjectsPage() {
       ],
       tags: ["Rust", "Machine Learning", "Monte Carlo", "CLI", "Random Forest"],
       icon: "📈",
-      githubLink: "",
+      githubLink: "https://github.com/AaryanGusain/StockData",
       demoLink: ""
     }
   ];
