@@ -1,6 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // ...existing config...
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true
+  },
+  basePath: '/Website',
+  assetPrefix: '/Website/',
   webpack: (config) => {
     config.module.rules.push({
       test: /\.pdf$/,
