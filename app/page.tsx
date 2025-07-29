@@ -14,7 +14,7 @@ export default function Home() {
 
   const projects = [
     {
-      title: "Beehive Queen-Presence Classifier",
+      title: "BHSHWQBUWBSBSJWBJW",
       subtitle: "Audio DSP, scikit-learn, LightGBM",
       date: "January 2025 – Present",
       description: [
@@ -101,7 +101,7 @@ export default function Home() {
               >
                 Hi, I'm{' '}
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
-                  Aaryan Gusain
+                  Devansh Gusain
                 </span>
               </motion.h1>
               

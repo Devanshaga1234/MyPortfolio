@@ -5,8 +5,8 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  basePath: '/Website',
-  assetPrefix: '/Website/',
+  // basePath: '/Website',
+  // assetPrefix: '/Website/',
   // Add this to help with static assets
   experimental: {
     images: {

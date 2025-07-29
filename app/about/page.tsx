@@ -35,7 +35,7 @@ export default function AboutPage() {
             >
               <Image
                 src="/images/about-me.jpg"
-                alt="Aaryan Gusain"
+                alt="Devansh Gusain"
                 fill
                 className="object-cover"
               />
