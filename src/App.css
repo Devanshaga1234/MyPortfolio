@@ -36,3 +36,34 @@
     transform: rotate(360deg);
   }
 }
+
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9; /* light gray */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #64748b; /* darker gray */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569; /* even darker on hover */
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background: #1e293b; /* dark gray */
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569; /* medium gray */
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #64748b; /* lighter on hover in dark mode */
+}

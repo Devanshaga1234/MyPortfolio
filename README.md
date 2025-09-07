@@ -1,46 +1,174 @@
-# Getting Started with Create React App
+# Devansh Agarwal - Personal Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive personal portfolio website built with React, TypeScript, and TailwindCSS. Features a clean design with smooth animations, dark/light mode toggle, and comprehensive sections showcasing skills, experience, and projects.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+- **Modern Design**: Clean, minimal aesthetic with lots of whitespace and subtle animations
+- **Responsive Layout**: Optimized for both mobile and desktop devices
+- **Dark/Light Mode**: Toggle between themes with persistent preference storage
+- **Smooth Scrolling**: Seamless navigation between sections
+- **Interactive Elements**: Hover effects, animations, and smooth transitions
+- **Accessibility**: Proper focus states and semantic HTML structure
 
-### `npm start`
+## 🛠️ Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Frontend**: React 19 + TypeScript
+- **Styling**: TailwindCSS
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Build Tool**: Create React App
+- **Deployment**: Cloudflare Pages ready
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 📱 Sections
 
-### `npm test`
+1. **Hero**: Introduction with photo placeholder and call-to-action buttons
+2. **Education**: Academic background including UIUC and NTU programs
+3. **Skills**: Technical skills with visual progress indicators
+4. **Experience**: Work experience with detailed achievements and metrics
+5. **Projects**: Featured projects with technologies and descriptions
+6. **Contact**: Contact form and information with clickable buttons
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Getting Started
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js (v16 or higher)
+- npm or yarn
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd portfolio-new
+```
 
-### `npm run eject`
+2. Install dependencies:
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3. Start the development server:
+```bash
+npm start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Building for Production
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+npm run build
+```
 
-## Learn More
+## 🌐 Deployment
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Cloudflare Pages
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Push your code to GitHub
+2. Go to [Cloudflare Pages](https://pages.cloudflare.com/)
+3. Connect your GitHub repository
+4. Set build command: `npm run build`
+5. Set build output directory: `build`
+6. Deploy!
+
+### Other Platforms
+
+The build output in the `build` folder can be deployed to any static hosting service:
+- Vercel
+- Netlify
+- GitHub Pages
+- AWS S3 + CloudFront
+
+## 🎨 Customization
+
+### Personal Information
+Update the following files with your information:
+- `src/components/Hero.tsx` - Name, title, and description
+- `src/components/Education.tsx` - Education details
+- `src/components/Experience.tsx` - Work experience
+- `src/components/Projects.tsx` - Project details
+- `src/components/Contact.tsx` - Contact information
+
+### Styling
+- Colors and themes can be modified in `tailwind.config.js`
+- Component-specific styles are in each component file
+- Global styles are in `src/index.css`
+
+### Photos
+Replace the photo placeholder in `src/components/Hero.tsx` with your actual photo:
+```tsx
+<img 
+  src="/path/to/your/photo.jpg" 
+  alt="Your Name" 
+  className="w-80 h-80 rounded-full object-cover"
+/>
+```
+
+## 📱 Responsive Design
+
+The portfolio is fully responsive with breakpoints:
+- **Mobile**: < 768px
+- **Tablet**: 768px - 1024px
+- **Desktop**: > 1024px
+
+## 🌙 Dark Mode
+
+Dark mode is implemented with:
+- System preference detection
+- Manual toggle in navigation
+- Persistent storage in localStorage
+- Smooth transitions between themes
+
+## ⚡ Performance
+
+- Lazy loading with `whileInView` animations
+- Optimized images and assets
+- Efficient CSS with TailwindCSS
+- Minimal JavaScript bundle
+
+## 🔧 Development
+
+### Available Scripts
+
+- `npm start` - Start development server
+- `npm run build` - Build for production
+- `npm run test` - Run tests
+- `npm run eject` - Eject from Create React App
+
+### Project Structure
+
+```
+src/
+├── components/          # React components
+│   ├── Navbar.tsx     # Navigation bar
+│   ├── Hero.tsx       # Hero section
+│   ├── Education.tsx  # Education section
+│   ├── Skills.tsx     # Skills section
+│   ├── Experience.tsx # Work experience
+│   ├── Projects.tsx   # Projects showcase
+│   ├── Contact.tsx    # Contact form
+│   └── Footer.tsx     # Footer
+├── App.tsx            # Main app component
+├── index.tsx          # Entry point
+└── index.css          # Global styles
+```
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📞 Contact
+
+- **Email**: da30@illinois.edu
+- **LinkedIn**: [linkedin.com/in/devanshagarwal2510/](https://linkedin.com/in/devanshagarwal2510/)
+- **Phone**: +1 (217) 721-8133
+
+---
+
+Built with ❤️ by Devansh Agarwal using React & TailwindCSS
