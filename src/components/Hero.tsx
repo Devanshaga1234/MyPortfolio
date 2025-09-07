@@ -435,7 +435,7 @@ const Hero: React.FC = () => {
               {/* Large Profile Image */}
               <div className="relative w-96 h-[400px] rounded-3xl border border-gray-200 dark:border-gray-600 shadow-2xl overflow-hidden">
                 <img 
-                  src="/profile.jpg" 
+                  src="/profile.png" 
                   alt="Devansh Agarwal" 
                   className="w-full h-full object-cover object-top"
                 />
