@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface TechIntroProps {
@@ -6,7 +6,6 @@ interface TechIntroProps {
 }
 
 const TechIntro: React.FC<TechIntroProps> = ({ onComplete }) => {
-  const [currentPhase, setCurrentPhase] = useState<'coding'>('coding');
   const [codeText, setCodeText] = useState('');
   const [showSkip, setShowSkip] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
@@ -54,24 +53,14 @@ const TechIntro: React.FC<TechIntroProps> = ({ onComplete }) => {
 
     // Hacking code snippets - systematically distributed
     const hackTexts = [
-      'sudo rm -rf /',
-      'hack.exe',
-      'access_granted',
-      'firewall_bypass',
-      'root@server',
-      'inject_payload',
-      'decrypt_key',
-      'brute_force',
-      'sql_injection',
-      'buffer_overflow',
-      'exploit_found',
-      'system_compromised'
+      'sudo rm -rf /', 'hack.exe', 'access_granted', 'firewall_bypass',
+      'root@server', 'inject_payload', 'decrypt_key', 'brute_force',
+      'sql_injection', 'buffer_overflow', 'exploit_found', 'system_compromised'
     ];
 
     const hackElements = [];
     for (let i = 0; i < 35; i++) {
       let x, y;
-      // Avoid circular area around code snippet (center 50%, 50% with radius ~10%)
       let distanceFromCenter;
       do {
         x = Math.random() * 100; // 0% to 100%
@@ -133,8 +122,6 @@ const TechIntro: React.FC<TechIntroProps> = ({ onComplete }) => {
     };
   }, [onComplete, prefersReducedMotion, codeSnippet]);
 
-
-
   const handleSkip = () => {
     setIsVisible(false);
     setTimeout(onComplete, 300);
@@ -155,12 +142,12 @@ const TechIntro: React.FC<TechIntroProps> = ({ onComplete }) => {
           {binaryParticles.map((particle) => (
             <motion.div
               key={particle.id}
-              initial={{ 
-                left: particle.x + '%', 
+              initial={{
+                left: particle.x + '%',
                 top: particle.y + '%',
                 opacity: 0.2
               }}
-              animate={{ 
+              animate={{
                 left: [
                   particle.x + '%',
                   (particle.x + particle.move1x) + '%',
@@ -177,7 +164,7 @@ const TechIntro: React.FC<TechIntroProps> = ({ onComplete }) => {
                 ],
                 opacity: [0.2, 0.25, 0.20, 0.25, 0.2]
               }}
-              transition={{ 
+              transition={{
                 duration: 12 + Math.random() * 6,
                 repeat: Infinity,
                 ease: "easeInOut"
@@ -198,12 +185,12 @@ const TechIntro: React.FC<TechIntroProps> = ({ onComplete }) => {
           {hackCode.map((hack) => (
             <motion.div
               key={hack.id}
-              initial={{ 
-                left: hack.x + '%', 
+              initial={{
+                left: hack.x + '%',
                 top: hack.y + '%',
                 opacity: 0.15
               }}
-              animate={{ 
+              animate={{
                 left: [
                   hack.x + '%',
                   (hack.x + hack.move1x) + '%',
@@ -220,7 +207,7 @@ const TechIntro: React.FC<TechIntroProps> = ({ onComplete }) => {
                 ],
                 opacity: [0.15, 0.20, 0.15, 0.20, 0.15]
               }}
-              transition={{ 
+              transition={{
                 duration: 15 + Math.random() * 8,
                 repeat: Infinity,
                 ease: "easeInOut"
@@ -248,34 +235,29 @@ const TechIntro: React.FC<TechIntroProps> = ({ onComplete }) => {
           </motion.button>
         )}
 
-
         {/* Coding Phase */}
-        {currentPhase === 'coding' && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="flex items-center justify-center h-full"
-          >
-            <div className="max-w-4xl mx-auto px-8">
-              <div className="font-mono text-[#00FF99] text-lg leading-relaxed">
-                <pre className="whitespace-pre-wrap">
-                  {codeText}
-                  {codeText.length < codeSnippet.length && (
-                    <motion.span
-                      animate={{ opacity: [1, 0, 1] }}
-                      transition={{ duration: 0.6, repeat: Infinity }}
-                      className="ml-1"
-                    >
-                      |
-                    </motion.span>
-                  )}
-                </pre>
-              </div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="flex items-center justify-center h-full"
+        >
+          <div className="max-w-4xl mx-auto px-8">
+            <div className="font-mono text-[#00FF99] text-lg leading-relaxed">
+              <pre className="whitespace-pre-wrap">
+                {codeText}
+                {codeText.length < codeSnippet.length && (
+                  <motion.span
+                    animate={{ opacity: [1, 0, 1] }}
+                    transition={{ duration: 0.6, repeat: Infinity }}
+                    className="ml-1"
+                  >
+                    |
+                  </motion.span>
+                )}
+              </pre>
             </div>
-          </motion.div>
-        )}
-
-
+          </div>
+        </motion.div>
       </motion.div>
     </AnimatePresence>
   );
