@@ -28,7 +28,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "deploy:workers": "npm run build && wrangler pages deploy build --project-name=devansh-agarwal-portfolio",
+    "deploy:workers:prod": "npm run build && wrangler pages deploy build --project-name=devansh-agarwal-portfolio --compatibility-date=2024-01-15"
   },
   "eslintConfig": {
     "extends": [
