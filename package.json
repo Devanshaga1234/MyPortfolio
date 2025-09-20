@@ -2,7 +2,7 @@
   "name": "portfolio-new",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://devanshaga1234.github.io/MyPortfolio",
+  "homepage": ".",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.8.0",
@@ -30,7 +30,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "deploy:workers": "npm run build && wrangler pages deploy build --project-name=devansh-agarwal-portfolio",
-    "deploy:workers:prod": "npm run build && wrangler pages deploy build --project-name=devansh-agarwal-portfolio --compatibility-date=2024-01-15"
+    "deploy:workers:prod": "npm run build && wrangler pages deploy build --project-name=devansh-agarwal-portfolio"
   },
   "eslintConfig": {
     "extends": [

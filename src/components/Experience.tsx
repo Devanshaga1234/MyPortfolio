@@ -18,7 +18,7 @@ const Experience: React.FC = () => {
         "Collaborated with cross-functional teams to deliver production-ready solutions"
       ],
       technologies: ["Spring Boot", "Java", "Microservices", "Database Optimization", "Dashboard Development"],
-      color: "from-blue-500 to-cyan-500"
+      color: "from-slate-500 to-slate-700"
     },
     {
       company: "InGO Electric",
@@ -34,7 +34,7 @@ const Experience: React.FC = () => {
         "Collaborated with engineering team on IoT and embedded systems projects"
       ],
       technologies: ["IoT", "Telemetry Analysis", "BMS", "Embedded Systems", "User Support"],
-      color: "from-green-500 to-emerald-500"
+      color: "from-slate-600 to-slate-800"
     }
   ];
 
@@ -49,7 +49,7 @@ const Experience: React.FC = () => {
           className="text-center mb-6"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            Work <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Experience</span>
+            Work <span className="text-slate-600 dark:text-slate-400">Experience</span>
           </h2>
         </motion.div>
 
@@ -65,7 +65,7 @@ const Experience: React.FC = () => {
             >
               {/* Timeline Connector */}
               {index < experiences.length - 1 && (
-                <div className="absolute left-8 top-24 bottom-0 w-0.5 bg-gradient-to-b from-blue-200 to-purple-200 dark:from-blue-700 dark:to-purple-700"></div>
+                <div className="absolute left-8 top-24 bottom-0 w-0.5 bg-gradient-to-b from-slate-200 to-slate-400 dark:from-slate-700 dark:to-slate-900"></div>
               )}
 
               <div className="flex items-start space-x-6">
@@ -104,7 +104,7 @@ const Experience: React.FC = () => {
                     {index === 0 && (
                       <div className="mt-4 md:mt-0 flex space-x-4">
                         <div className="text-center">
-                          <div className="text-2xl font-bold text-green-600 dark:text-green-400">
+                          <div className="text-2xl font-bold text-slate-600 dark:text-slate-400">
                             $10K+
                           </div>
                           <div className="text-sm text-gray-500 dark:text-gray-400">
@@ -112,7 +112,7 @@ const Experience: React.FC = () => {
                           </div>
                         </div>
                         <div className="text-center">
-                          <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                          <div className="text-2xl font-bold text-slate-600 dark:text-slate-400">
                             40%
                           </div>
                           <div className="text-sm text-gray-500 dark:text-gray-400">
@@ -126,7 +126,7 @@ const Experience: React.FC = () => {
                   {/* Highlights */}
                   <div className="mb-6">
                     <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
-                      <TrendingUp className="w-5 h-5 mr-2 text-blue-600 dark:text-blue-400" />
+                      <TrendingUp className="w-5 h-5 mr-2 text-slate-600 dark:text-slate-400" />
                       Key Achievements
                     </h4>
                     <ul className="space-y-3">
@@ -139,7 +139,7 @@ const Experience: React.FC = () => {
                           viewport={{ once: true }}
                           className="flex items-start space-x-3"
                         >
-                          <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-slate-500 rounded-full mt-2 flex-shrink-0"></div>
                           <span className="text-gray-600 dark:text-gray-300 leading-relaxed">
                             {highlight}
                           </span>
@@ -161,7 +161,7 @@ const Experience: React.FC = () => {
                           whileInView={{ opacity: 1, scale: 1 }}
                           transition={{ duration: 0.4, delay: (index * 0.2) + (techIndex * 0.1) }}
                           viewport={{ once: true }}
-                          className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium"
+                          className="px-3 py-1 bg-slate-100 dark:bg-slate-900/30 text-slate-700 dark:text-slate-300 rounded-full text-sm font-medium"
                         >
                           {tech}
                         </motion.span>

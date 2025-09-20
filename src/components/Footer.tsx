@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
       icon: Linkedin,
       label: "LinkedIn",
       link: "https://linkedin.com/in/devanshagarwal2510/",
-      color: "hover:text-blue-600 dark:hover:text-blue-400"
+      color: "hover:text-gray-600 dark:hover:text-gray-400"
     },
     {
       icon: Mail,

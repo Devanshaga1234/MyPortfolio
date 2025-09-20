@@ -17,7 +17,7 @@ const Projects: React.FC = () => {
         "Enabled sub-50ms latency and 99.9% uptime performance"
       ],
       technologies: ["Python", "Flask", "Cloudflare Workers", "Naive Bayes", "Machine Learning"],
-      color: "from-orange-500 to-red-500",
+      color: "from-gray-500 to-gray-700",
       github: "#",
       live: "#",
       impact: "89% accuracy, 99.9% uptime"
@@ -35,7 +35,7 @@ const Projects: React.FC = () => {
         "Integrated multiple data sources for comprehensive job analysis"
       ],
       technologies: ["Python", "TF-IDF", "SQL", "Resume Parsing", "AI/ML", "Data Processing"],
-      color: "from-purple-500 to-pink-500",
+      color: "from-slate-600 to-slate-800",
       github: "#",
       live: "#",
       impact: "AI-powered career guidance"
@@ -53,7 +53,7 @@ const Projects: React.FC = () => {
         "Optimized memory usage for large puzzle states"
       ],
       technologies: ["C++", "BFS", "A* Algorithm", "Heuristics", "Algorithm Optimization", "Data Structures"],
-      color: "from-blue-500 to-cyan-500",
+      color: "from-slate-500 to-slate-700",
       github: "#",
       live: "#",
       impact: "85% faster solving"
@@ -71,7 +71,7 @@ const Projects: React.FC = () => {
         "Integrated all components into functional receiver system"
       ],
       technologies: ["RF Engineering", "Circuit Design", "Signal Processing", "AM Demodulation", "Hardware Integration"],
-      color: "from-green-500 to-emerald-500",
+      color: "from-slate-600 to-slate-800",
       github: "#",
       live: "#",
       impact: "25% clarity boost"
@@ -124,7 +124,7 @@ const Projects: React.FC = () => {
                 {/* Highlights */}
                 <div className="mb-6">
                   <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
-                    <TrendingUp className="w-5 h-5 mr-2 text-green-500" />
+                    <TrendingUp className="w-5 h-5 mr-2 text-slate-500" />
                     Key Features
                   </h4>
                   <ul className="space-y-2">
@@ -137,7 +137,7 @@ const Projects: React.FC = () => {
                         viewport={{ once: true }}
                         className="flex items-start space-x-3"
                       >
-                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-1.5 h-1.5 bg-slate-500 rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
                           {highlight}
                         </span>
@@ -159,7 +159,7 @@ const Projects: React.FC = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.4, delay: (index * 0.2) + (techIndex * 0.1) }}
                         viewport={{ once: true }}
-                        className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium"
+                        className="px-3 py-1 bg-slate-100 dark:bg-slate-900/30 text-slate-700 dark:text-slate-300 rounded-full text-sm font-medium"
                       >
                         {tech}
                       </motion.span>
@@ -174,7 +174,7 @@ const Projects: React.FC = () => {
                       <Github className="w-4 h-4" />
                       <span>View Code</span>
                     </button>
-                    <button className="flex-1 flex items-center justify-center space-x-2 px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-blue-600 hover:text-blue-600 dark:hover:border-blue-400 dark:hover:text-blue-400 transition-colors">
+                    <button className="flex-1 flex items-center justify-center space-x-2 px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-slate-600 hover:text-slate-600 dark:hover:border-slate-400 dark:hover:text-slate-400 transition-colors">
                       <ExternalLink className="w-4 h-4" />
                       <span>Live Demo</span>
                     </button>
@@ -193,7 +193,7 @@ const Projects: React.FC = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl p-8">
+          <div className="bg-gradient-to-r from-gray-50 to-slate-50 dark:from-gray-800/20 dark:to-slate-900/20 rounded-2xl p-8">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
               More Projects
             </h3>
@@ -201,7 +201,7 @@ const Projects: React.FC = () => {
               I'm constantly working on new projects and learning new technologies. 
               Check out my GitHub for more examples of my work.
             </p>
-            <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg">
+            <button className="px-8 py-3 bg-slate-700 text-white font-semibold rounded-lg hover:bg-slate-800 transform hover:scale-105 transition-all duration-300 shadow-lg">
               <Github className="inline mr-2" size={20} />
               View All Projects
             </button>

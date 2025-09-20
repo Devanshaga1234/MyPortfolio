@@ -1,9 +1,5 @@
 name = "devansh-agarwal-portfolio"
-main = "worker.js"
 compatibility_date = "2024-01-15"
-
-[site]
-bucket = "./build"
 
 [env.production]
 name = "devansh-agarwal-portfolio"

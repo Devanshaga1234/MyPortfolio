@@ -9,21 +9,21 @@ const Contact: React.FC = () => {
       label: "Email",
       value: "da30@illinois.edu",
       link: "mailto:da30@illinois.edu",
-      color: "from-blue-500 to-cyan-500"
+      color: "from-slate-500 to-slate-700"
     },
     {
       icon: Phone,
       label: "Phone",
       value: "+1 (217) 721-8133",
       link: "tel:+12177218133",
-      color: "from-green-500 to-emerald-500"
+      color: "from-slate-600 to-slate-800"
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
       value: "linkedin.com/in/devanshagarwal2510/",
       link: "https://linkedin.com/in/devanshagarwal2510/",
-      color: "from-blue-600 to-indigo-600"
+      color: "from-slate-600 to-slate-800"
     },
     {
       icon: Github,
@@ -37,7 +37,7 @@ const Contact: React.FC = () => {
       label: "Location",
       value: "Urbana-Champaign, IL",
       link: "https://www.google.com/maps/place/Champaign,+IL",
-      color: "from-purple-500 to-pink-500"
+      color: "from-slate-600 to-slate-800"
     }
   ];
 
@@ -146,7 +146,7 @@ const Contact: React.FC = () => {
                   </label>
                   <input
                     type="text"
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-colors"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-colors"
                     placeholder="Your first name"
                   />
                 </div>
@@ -156,7 +156,7 @@ const Contact: React.FC = () => {
                   </label>
                   <input
                     type="text"
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-colors"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-colors"
                     placeholder="Your last name"
                   />
                 </div>
@@ -168,7 +168,7 @@ const Contact: React.FC = () => {
                 </label>
                 <input
                   type="email"
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-colors"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-colors"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -179,7 +179,7 @@ const Contact: React.FC = () => {
                 </label>
                 <input
                   type="text"
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-colors"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-colors"
                   placeholder="What's this about?"
                 />
               </div>
@@ -197,7 +197,7 @@ const Contact: React.FC = () => {
               
               <button
                 type="submit"
-                className="w-full flex items-center justify-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg"
+                className="w-full flex items-center justify-center space-x-2 px-6 py-3 bg-slate-700 text-white font-semibold rounded-lg hover:bg-slate-800 transform hover:scale-105 transition-all duration-300 shadow-lg"
               >
                 <Send className="w-4 h-4" />
                 <span>Send Message</span>
@@ -214,7 +214,7 @@ const Contact: React.FC = () => {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl p-8 max-w-4xl mx-auto">
+          <div className="bg-gradient-to-r from-gray-50 to-slate-50 dark:from-gray-800/20 dark:to-slate-900/20 rounded-2xl p-8 max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
               Let's Work Together
             </h3>
@@ -226,13 +226,13 @@ const Contact: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
                 onClick={() => handleContactClick("mailto:da30@illinois.edu", "email")}
-                className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg"
+                className="px-8 py-3 bg-slate-700 text-white font-semibold rounded-lg hover:bg-slate-800 transform hover:scale-105 transition-all duration-300 shadow-lg"
               >
                 Start a Conversation
               </button>
               <button 
                 onClick={() => handleContactClick("https://linkedin.com/in/devanshagarwal2510/", "linkedin")}
-                className="px-8 py-3 border-2 border-blue-600 text-blue-600 dark:text-blue-400 font-semibold rounded-lg hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white transform hover:scale-105 transition-all duration-300"
+                className="px-8 py-3 border-2 border-slate-600 text-slate-600 dark:text-slate-400 font-semibold rounded-lg hover:bg-slate-600 hover:text-white dark:hover:bg-slate-600 dark:hover:text-white transform hover:scale-105 transition-all duration-300"
               >
                 Connect on LinkedIn
               </button>

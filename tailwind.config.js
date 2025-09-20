@@ -8,20 +8,25 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // NTU Colors
+        'ntu': {
+          'navy': '#272757',
+          'red': '#B22222',
+        },
+        // UIUC Colors
+        'uiuc': {
+          'navy': '#13294B',
+          'orange': '#FF5F05',
+          'blue': '#001489',
+        },
         // Innovative Modern Palette
         'neon': {
-          'cyan': '#00FFFF',
           'pink': '#FF10F0',
-          'purple': '#8A2BE2',
           'green': '#00FF41',
-          'orange': '#FF6B35',
-          'blue': '#0066FF',
         },
         'glass': {
           'white': 'rgba(255, 255, 255, 0.1)',
           'black': 'rgba(0, 0, 0, 0.1)',
-          'blue': 'rgba(59, 130, 246, 0.1)',
-          'purple': 'rgba(147, 51, 234, 0.1)',
         },
         'dark': {
           'primary': '#0A0A0A',

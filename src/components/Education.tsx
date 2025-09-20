@@ -15,8 +15,9 @@ const Education: React.FC = () => {
       techFocus: ["Digital Systems Design", "Artificial Intelligence", "Statistics", "Data Structures & Algorithms", "Machine Learning"]
     },
     {
-      degree: "Summer Program in Data Science",
+      degree: "Data Science",
       degree2: "& Artificial Intelligence",
+      minor: "Summer Program",
       school: "Nanyang Technological University (NTU), Singapore",
       graduation: "June 2024 - July 2024",
       icon: Globe,
@@ -36,7 +37,7 @@ const Education: React.FC = () => {
           className="text-center mb-6"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Education</span>
+            <span className="text-slate-600 dark:text-slate-400">Education</span>
           </h2>
         </motion.div>
 
@@ -48,32 +49,72 @@ const Education: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="bg-white dark:bg-gray-700 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-gray-100 dark:border-gray-600"
+              className="bg-white dark:bg-gray-700 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-gray-100 dark:border-gray-600 flex flex-col h-full"
             >
-              {/* Header with Icon and Title */}
-              <div className="text-center mb-6">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mb-4 shadow-lg">
-                  <item.icon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+              {/* Header with Logo and Title */}
+              <div className="text-center mb-6 flex-shrink-0">
+                {index === 0 ? (
+                  // UIUC Logo
+                  <div className="mb-4">
+                    <img 
+                      src="/UIUCLOGO.png" 
+                      alt="UIUC Logo" 
+                      className="w-20 h-20 object-contain mx-auto"
+                    />
+                  </div>
+                ) : (
+                  // NTU Logo
+                  <div className="mb-4">
+                    <img 
+                      src="/NTULOGO.png" 
+                      alt="NTU Logo" 
+                      className="w-20 h-20 object-contain mx-auto"
+                    />
+                  </div>
+                )}
+                <h3 className={`text-2xl font-bold mb-2 ${
+                  index === 0 
+                    ? 'text-uiuc-navy dark:text-uiuc-navy' 
+                    : 'text-ntu-navy dark:text-ntu-navy'
+                }`}>
                   {item.degree}
                 </h3>
                 {item.degree2 && (
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  <h3 className={`text-2xl font-bold mb-2 ${
+                    index === 0 
+                      ? 'text-uiuc-navy dark:text-uiuc-navy' 
+                      : 'text-ntu-navy dark:text-ntu-navy'
+                  }`}>
                     {item.degree2}
                   </h3>
                 )}
                 
                 {item.minor && (
-                  <p className="text-lg text-gray-600 dark:text-gray-300 mb-3 font-medium">
+                  <p className={`text-lg mb-3 font-medium ${
+                    index === 0 
+                      ? 'text-uiuc-orange dark:text-uiuc-orange' 
+                      : 'text-ntu-red dark:text-ntu-red'
+                  }`}>
                     {item.minor}
                   </p>
                 )}
                 
                 {item.honors && (
-                  <div className="inline-flex items-center bg-gradient-to-r from-yellow-100 to-orange-100 dark:from-yellow-900/30 dark:to-orange-900/30 px-4 py-2 rounded-full mb-2">
-                    <Award className="w-5 h-5 text-yellow-600 dark:text-yellow-400 mr-2" />
-                    <span className="text-sm font-semibold text-yellow-700 dark:text-yellow-300">
+                  <div className={`inline-flex items-center px-4 py-2 rounded-full mb-2 ${
+                    index === 0 
+                      ? 'bg-uiuc-orange/10 dark:bg-uiuc-orange/20' 
+                      : 'bg-ntu-red/10 dark:bg-ntu-red/20'
+                  }`}>
+                    <Award className={`w-5 h-5 mr-2 ${
+                      index === 0 
+                        ? 'text-uiuc-navy dark:text-uiuc-navy' 
+                        : 'text-ntu-navy dark:text-ntu-navy'
+                    }`} />
+                    <span className={`text-sm font-semibold ${
+                      index === 0 
+                        ? 'text-uiuc-navy dark:text-uiuc-navy' 
+                        : 'text-ntu-navy dark:text-ntu-navy'
+                    }`}>
                       {item.honors}
                     </span>
                   </div>
@@ -81,8 +122,12 @@ const Education: React.FC = () => {
               </div>
               
               {/* Institution and Date */}
-              <div className="text-center mb-4">
-                <p className="text-xl font-bold text-blue-600 dark:text-blue-400 mb-2">
+              <div className="text-center mb-6 flex-shrink-0">
+                <p className={`text-xl font-bold mb-2 ${
+                  index === 0 
+                    ? 'text-uiuc-navy dark:text-uiuc-navy' 
+                    : 'text-ntu-navy dark:text-ntu-navy'
+                }`}>
                   {item.school}
                 </p>
                 <p className="text-gray-500 dark:text-gray-400 font-medium">
@@ -91,14 +136,14 @@ const Education: React.FC = () => {
               </div>
               
               {/* Description */}
-              <div className="text-center mb-6">
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+              <div className="text-center mb-6 flex-grow">
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed min-h-[4rem]">
                   {item.description}
                 </p>
               </div>
               
               {/* Tech Focus Areas */}
-              <div className="border-t border-gray-200 dark:border-gray-600 pt-6">
+              <div className="border-t border-gray-200 dark:border-gray-600 pt-6 flex-shrink-0">
                 <h4 className="text-center text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">
                   Technical Focus Areas
                 </h4>
@@ -110,7 +155,11 @@ const Education: React.FC = () => {
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.3, delay: techIndex * 0.1 }}
                       viewport={{ once: true }}
-                      className="px-3 py-1 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium rounded-full border border-blue-200 dark:border-blue-700"
+                      className={`px-3 py-1 text-sm font-medium rounded-full ${
+                        index === 0 
+                          ? 'bg-uiuc-orange/10 dark:bg-uiuc-orange/20 text-uiuc-navy dark:text-uiuc-navy border border-uiuc-orange/30 dark:border-uiuc-orange/50' 
+                          : 'bg-ntu-red/10 dark:bg-ntu-red/20 text-ntu-navy dark:text-ntu-navy border border-ntu-red/30 dark:border-ntu-red/50'
+                      }`}
                     >
                       {tech}
                     </motion.span>
@@ -132,7 +181,7 @@ const Education: React.FC = () => {
           <div className="bg-white dark:bg-gray-700 rounded-3xl p-10 border border-gray-100 dark:border-gray-600 shadow-xl max-w-5xl mx-auto">
             <div className="text-center mb-6">
               <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Academic <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Excellence</span>
+                Academic <span className="text-slate-900 dark:text-slate-400">Excellence</span>
               </h3>
             </div>
             
@@ -144,15 +193,12 @@ const Education: React.FC = () => {
                 viewport={{ once: true }}
                 className="group"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-slate-500 to-slate-600 rounded-2xl mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300">
                   <Award className="w-8 h-8 text-white" />
                 </div>
-                <h4 className="text-xl font-bold text-blue-600 dark:text-blue-400 mb-2">
+                <h4 className="text-xl font-bold text-slate-600 dark:text-slate-400 mb-0">
                   James Scholar
                 </h4>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Top academic distinction at UIUC
-                </p>
               </motion.div>
               
               <motion.div
@@ -162,15 +208,12 @@ const Education: React.FC = () => {
                 viewport={{ once: true }}
                 className="group"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-slate-700 to-slate-900 rounded-2xl mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300">
                   <Globe className="w-8 h-8 text-white" />
                 </div>
-                <h4 className="text-xl font-bold text-purple-600 dark:text-purple-400 mb-2">
+                <h4 className="text-xl font-bold text-slate-600 dark:text-slate-400 mb-0">
                   International
                 </h4>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Global learning experience
-                </p>
               </motion.div>
               
               <motion.div
@@ -180,15 +223,12 @@ const Education: React.FC = () => {
                 viewport={{ once: true }}
                 className="group"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-slate-600 to-slate-800 rounded-2xl mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300">
                   <Cpu className="w-8 h-8 text-white" />
                 </div>
-                <h4 className="text-xl font-bold text-green-600 dark:text-green-400 mb-2">
+                <h4 className="text-xl font-bold text-slate-600 dark:text-slate-400 mb-0">
                   Dual Focus
                 </h4>
-                <p className="text-gray-600 dark:text-gray-300">
-                  Engineering + Statistics
-                </p>
               </motion.div>
             </div>
             
@@ -203,10 +243,10 @@ const Education: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
                   viewport={{ once: true }}
-                  className="flex items-center space-x-2 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 px-4 py-2 rounded-full"
+                  className="flex items-center space-x-2 bg-gradient-to-r from-slate-50 to-slate-100 dark:from-slate-900/30 dark:to-slate-800/30 px-4 py-2 rounded-full"
                 >
-                  <Code className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                  <span className="text-blue-700 dark:text-blue-300 font-medium">Programming</span>
+                  <Code className="w-5 h-5 text-slate-600 dark:text-slate-400" />
+                  <span className="text-slate-700 dark:text-slate-300 font-medium">Programming</span>
                 </motion.div>
                 
                 <motion.div
@@ -214,10 +254,10 @@ const Education: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="flex items-center space-x-2 bg-gradient-to-r from-purple-50 to-purple-100 dark:from-purple-900/30 dark:to-purple-800/30 px-4 py-2 rounded-full"
+                  className="flex items-center space-x-2 bg-gradient-to-r from-slate-50 to-slate-100 dark:from-slate-900/30 dark:to-slate-800/30 px-4 py-2 rounded-full"
                 >
-                  <Cpu className="w-5 h-5 text-purple-600 dark:text-purple-400" />
-                  <span className="text-purple-700 dark:text-purple-300 font-medium">Hardware</span>
+                  <Cpu className="w-5 h-5 text-slate-600 dark:text-slate-400" />
+                  <span className="text-slate-700 dark:text-slate-300 font-medium">Hardware</span>
                 </motion.div>
                 
                 <motion.div
@@ -225,10 +265,10 @@ const Education: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
                   viewport={{ once: true }}
-                  className="flex items-center space-x-2 bg-gradient-to-r from-green-50 to-green-100 dark:from-green-900/30 dark:to-green-800/30 px-4 py-2 rounded-full"
+                  className="flex items-center space-x-2 bg-gradient-to-r from-slate-50 to-slate-100 dark:from-slate-900/30 dark:to-slate-800/30 px-4 py-2 rounded-full"
                 >
-                  <Database className="w-5 h-5 text-green-600 dark:text-green-400" />
-                  <span className="text-green-700 dark:text-green-300 font-medium">Data Science</span>
+                  <Database className="w-5 h-5 text-slate-600 dark:text-slate-400" />
+                  <span className="text-slate-700 dark:text-slate-300 font-medium">Data Science</span>
                 </motion.div>
                 
                 <motion.div
@@ -236,10 +276,10 @@ const Education: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
                   viewport={{ once: true }}
-                  className="flex items-center space-x-2 bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-900/30 dark:to-orange-800/30 px-4 py-2 rounded-full"
+                  className="flex items-center space-x-2 bg-gradient-to-r from-slate-50 to-slate-100 dark:from-slate-900/30 dark:to-slate-800/30 px-4 py-2 rounded-full"
                 >
-                  <Brain className="w-5 h-5 text-orange-600 dark:text-orange-400" />
-                  <span className="text-orange-700 dark:text-orange-300 font-medium">AI/ML</span>
+                  <Brain className="w-5 h-5 text-gray-600 dark:text-gray-400" />
+                  <span className="text-gray-700 dark:text-gray-300 font-medium">AI/ML</span>
                 </motion.div>
                 
                 <motion.div
@@ -247,10 +287,10 @@ const Education: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.5 }}
                   viewport={{ once: true }}
-                  className="flex items-center space-x-2 bg-gradient-to-r from-cyan-50 to-cyan-100 dark:from-cyan-900/30 dark:to-cyan-800/30 px-4 py-2 rounded-full"
+                  className="flex items-center space-x-2 bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800/30 dark:to-gray-700/30 px-4 py-2 rounded-full"
                 >
-                  <Zap className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />
-                  <span className="text-cyan-700 dark:text-cyan-300 font-medium">Statistics</span>
+                  <Zap className="w-5 h-5 text-gray-600 dark:text-gray-400" />
+                  <span className="text-gray-700 dark:text-gray-300 font-medium">Statistics</span>
                 </motion.div>
               </div>
             </div>
