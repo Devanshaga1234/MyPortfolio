@@ -7,7 +7,6 @@ import {
   Globe, 
   Database,
   Zap,
-  ChevronRight,
   FileText,
   Server,
   Monitor,
