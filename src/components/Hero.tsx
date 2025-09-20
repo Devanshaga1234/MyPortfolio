@@ -102,7 +102,7 @@ const Hero: React.FC = () => {
               className="flex gap-6 mt-8 justify-center lg:justify-start"
             >
               <a
-                href="https://github.com/devanshagarwal"
+                href="https://github.com/Devanshaga1234"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-300 hover:text-slate-600 dark:hover:text-slate-400 transition-colors"

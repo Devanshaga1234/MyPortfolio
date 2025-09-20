@@ -1,4 +1,5 @@
 name: Deploy to GitHub Pages
+
 on:
   push:
     branches: [ master ]
@@ -11,25 +12,39 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
 
-      - run: npm ci
-      - run: npm run build   # CRA => ./build ; Vite => ./dist
+      - name: Install dependencies
+        run: npm ci
 
-      - uses: actions/upload-pages-artifact@v3
+      - name: Build
+        run: npm run build
+
+      - name: Verify build output
+        run: |
+          echo "Build directory contents:"
+          ls -la build/
+          echo "Public files:"
+          ls -la build/*.png build/*.jpg build/*.pdf 2>/dev/null || echo "No image/PDF files found"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: ./build      # <-- change to ./dist if Vite
+          path: ./build
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -37,5 +52,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - id: deployment
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4

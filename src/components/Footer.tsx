@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
     {
       icon: Github,
       label: "GitHub",
-      link: "https://github.com/devanshagarwal",
+      link: "https://github.com/Devanshaga1234",
       color: "hover:text-gray-900 dark:hover:text-white"
     },
     {
